@@ -1,0 +1,80 @@
+- id: '1617572318075'
+  alias: Turn on Aqara light
+  description: ''
+  trigger:
+  - device_id: a384c54f05dc3ddca2d3fec184d4bdbb
+    domain: deconz
+    platform: device
+    type: remote_gyro_activated
+    subtype: ''
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  mode: single
+- id: '1617572490521'
+  alias: Turn off Aqara Light
+  description: ''
+  trigger:
+  - device_id: a384c54f05dc3ddca2d3fec184d4bdbb
+    domain: deconz
+    platform: device
+    type: remote_gyro_activated
+    subtype: ''
+  condition:
+  - condition: device
+    type: is_on
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  action:
+  - type: turn_off
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  mode: single
+- id: '1617572661464'
+  alias: Turn Aqara Light brighter
+  description: ''
+  trigger:
+  - device_id: a384c54f05dc3ddca2d3fec184d4bdbb
+    domain: deconz
+    platform: device
+    type: remote_flip_90_degrees
+    subtype: ''
+  condition:
+  - condition: device
+    type: is_on
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  action:
+  - type: brightness_increase
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  mode: single
+- id: '1617572780908'
+  alias: Turn Aqara Light darker
+  description: ''
+  trigger:
+  - device_id: a384c54f05dc3ddca2d3fec184d4bdbb
+    domain: deconz
+    platform: device
+    type: remote_flip_180_degrees
+    subtype: ''
+  condition:
+  - condition: device
+    type: is_on
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  action:
+  - type: brightness_decrease
+    device_id: ffd58c4017d1d4e5557c3a718f91d79e
+    entity_id: light.aqara_hub_m1s_1293
+    domain: light
+  mode: single
+
